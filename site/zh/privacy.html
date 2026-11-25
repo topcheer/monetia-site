@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monetia — 隐私政策</title>
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Moneta — 隐私政策</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://www.monetia.net/zh/privacy.html">
 <style>
-:root{--navy:#0B0F1E;--purple:#16142D;--gold-l:#F2CC59;--text:#F5F6FA;--text2:rgba(255,255,255,.65);--text3:rgba(255,255,255,.37)}
+:root{--navy:#08070F;--purple:#1A1440;--gold:#E9C46A;--gold-l:#F2C14E;--text:#F6F2EA;
+  --text2:rgba(246,242,234,.66);--text3:rgba(246,242,234,.42);--glass:rgba(255,255,255,.045);--stroke:rgba(246,242,234,.10)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC",sans-serif;
-  background:linear-gradient(160deg,var(--navy),var(--purple),var(--navy));color:var(--text);line-height:1.9}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC","Inter",sans-serif;
+  background:radial-gradient(900px 600px at 80% -10%,rgba(58,30,110,.5),transparent 60%),linear-gradient(160deg,var(--navy),var(--purple),var(--navy));color:var(--text);line-height:1.8}
+.topnav{max-width:760px;margin:0 auto;padding:22px 24px;display:flex;justify-content:space-between;align-items:center}
+.topnav .brand{display:flex;align-items:center;gap:10px;font-family:"Cormorant Garamond","Didot","Songti SC",serif;font-size:22px;font-weight:600;color:var(--text);text-decoration:none}
+.topnav .brand img{width:26px;height:26px}
+.topnav a.back{color:var(--text3);font-size:13px;text-decoration:none;letter-spacing:.08em}
+.topnav a.back:hover{color:var(--gold-l)}
 .wrap{max-width:760px;margin:0 auto;padding:56px 24px 80px}
 h1{font-size:30px;margin-bottom:4px} h1 em{font-style:normal;color:var(--gold-l)}
 .date{color:var(--text3);font-size:13px;margin-bottom:36px}
@@ -21,17 +28,18 @@ a{color:var(--gold-l)}
 </style>
 </head>
 <body>
+<div class="topnav"><a class="brand" href="/zh/"><img src="/assets/brand/app-icon.png" alt="">Moneta</a><a class="back" href="/zh/">← 返回首页 / Home</a></div>
 <div class="wrap">
-<h1><em>Monetia</em> 隐私政策</h1>
+<h1><em>Moneta</em> 隐私政策</h1>
 <div class="date">Privacy Policy · 生效日期：2026 年 8 月 31 日</div>
 
 <h2>1. 总则</h2>
-<p>Monetia（"本应用"）由独立开发者（"我们"）开发。我们的核心原则是<b>本地优先（Local-first）</b>：你的账本数据默认存储在你的设备上，我们不运营任何后端服务器来存放你的账目。</p>
+<p>Moneta（"本应用"）由独立开发者（"我们"）开发。我们的核心原则是<b>本地优先（Local-first）</b>：你的账本数据默认存储在你的设备上，我们不运营任何后端服务器来存放你的账目。</p>
 
 <h2>2. 我们收集什么</h2>
 <ul>
 <li><b>账目数据（本地存储）</b>：交易金额、分类、备注、商户、收据图片，全部保存在设备本地数据库（SwiftData），并可在你开启后经你本人的 iCloud 私密同步到你的其它设备。这些数据不会发送给我们。</li>
-<li><b>AI 处理（按需、即用即传）</b>：仅当你使用语音记账、收据识别或 AI 对话时，相关文本/音频/图片才会发送至你所配置的 AI 服务商（默认 Firebase AI Logic / Google，或你自行填写的任意 OpenAI 兼容服务商）进行处理。我们不在这类请求中附加任何账号标识，也无法将内容关联到你本人。</li>
+<li><b>AI 处理（按需、即用即传）</b>：仅当你使用语音记账、收据识别或 AI 对话时，相关文本/音频/图片才会发送至你所配置的 AI 服务商（默认 Firebase AI Logic / Google，或你自行填写的任意 OpenAI 兼容服务商）进行处理。我们不在这类请求中附加任何账号标识，也无法将内容关联到你本人。<b>首次使用 AI 功能前，应用内会弹窗披露上述数据流向并请求你的授权；拒绝后 AI 功能不可用，其余功能不受影响，授权可随时在 设置 → AI 服务商 中更改。</b></li>
 <li><b>我们不收集</b>：无注册账号、无广告标识符（IDFA）、无第三方追踪 SDK、无行为分析。</li>
 </ul>
 
@@ -69,10 +77,10 @@ a{color:var(--gold-l)}
 <p>如有重大变更我们将通过应用内公告与本页面更新告知。</p>
 
 <h2>9. 联系我们</h2>
-<p>隐私相关问题：<a href="mailto:monetia@monetia.net">monetia@monetia.net</a></p>
+<p>隐私相关问题：<a href="mailto:monetia@liop.dev">monetia@liop.dev</a></p>
 
 <p style="margin-top:40px;color:var(--text3);font-size:13px">This policy is also available upon request in English, Japanese, Korean, Spanish, German and Russian.</p>
 </div>
-<footer>© 2026 Monetia · <a href="index.html">返回首页</a> · <a href="support.html">支持</a></footer>
+<footer>© 2026 Moneta · <a href="/zh/">返回首页</a> · <a href="/zh/support.html">支持</a></footer>
 </body>
 </html>

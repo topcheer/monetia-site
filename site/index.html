@@ -1,127 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monetia — The AI ledger that listens, sees & records</title>
-<meta name="description" content="Monetia: bookkeeping by voice, photo and chat. Multi-currency, budgets, reports, local-first privacy.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Moneta — 会听会看的 AI 记账本 · The AI ledger that listens, sees & records</title>
+<meta name="description" content="Moneta：语音、拍照、对话三种方式 AI 自动记账。预算、报表、多币种、iCloud 同步，本地优先。iPhone、iPad、Mac。">
+<meta property="og:title" content="Moneta — 会听会看的 AI 记账本">
+<meta property="og:description" content="说一句、拍一张、聊两句，自动入账。Say it. Snap it. Done.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.monetia.net/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:image" content="https://www.monetia.net/assets/brand/app-icon.png">
+<meta name="theme-color" content="#08070F">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://www.monetia.net/">
+<link rel="alternate" hreflang="en" href="https://www.monetia.net/">
 <link rel="alternate" hreflang="zh-Hans" href="https://www.monetia.net/zh/">
-<style>
-:root{
-  --navy:#0B0F1E; --purple:#16142D; --gold:#D7AF3C; --gold-l:#F2CC59; --gold-d:#CC9E33;
-  --text:#F5F6FA; --text2:rgba(255,255,255,.65); --text3:rgba(255,255,255,.37);
-  --glass:rgba(255,255,255,.07); --stroke:rgba(255,255,255,.16);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  background:linear-gradient(160deg,var(--navy) 0%,var(--purple) 50%,var(--navy) 100%);color:var(--text);line-height:1.7;min-height:100vh}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:0;z-index:9;backdrop-filter:blur(20px);background:rgba(11,15,30,.75);border-bottom:1px solid var(--stroke)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
-.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;color:var(--gold-l);text-decoration:none}
-.logo-badge{width:34px;height:34px;border-radius:50%;background:linear-gradient(225deg,var(--gold-l),var(--gold-d));
-  display:flex;align-items:center;justify-content:center;color:#0B0F1E;font-weight:800;font-family:Georgia,serif}
-nav .links a{color:var(--text2);text-decoration:none;margin-left:24px;font-size:15px}
-nav .links a:hover{color:var(--gold-l)}
-.btn{display:inline-block;background:linear-gradient(225deg,var(--gold-l),var(--gold-d));color:#0B0F1E;
-  padding:12px 28px;border-radius:24px;font-weight:700;text-decoration:none;transition:.2s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(215,175,60,.35)}
-.btn.ghost{background:transparent;border:1px solid var(--stroke);color:var(--text)}
-.hero{text-align:center;padding:96px 0 72px}
-.hero h1{font-size:clamp(34px,6vw,58px);font-weight:800;letter-spacing:-1px}
-.hero h1 em{font-style:normal;background:linear-gradient(225deg,var(--gold-l),var(--gold-d));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:var(--text2);font-size:clamp(16px,2.4vw,20px);max-width:640px;margin:20px auto 36px}
-.hero .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.badges{display:flex;gap:10px;justify-content:center;margin-top:28px;color:var(--text3);font-size:13px;flex-wrap:wrap}
-.badges span{border:1px solid var(--stroke);border-radius:14px;padding:4px 12px}
-section{padding:64px 0}
-h2{text-align:center;font-size:clamp(26px,4vw,36px);margin-bottom:12px}
-.sub{text-align:center;color:var(--text2);margin-bottom:48px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:var(--glass);border:1px solid var(--stroke);border-radius:22px;padding:30px}
-.card .ico{width:48px;height:48px;border-radius:14px;background:rgba(215,175,60,.14);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
-.card h3{font-size:18px;margin-bottom:8px}
-.card p{color:var(--text2);font-size:14.5px}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.feat{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:18px;background:rgba(255,255,255,.04)}
-.feat .ico{font-size:26px;flex-shrink:0}
-.feat b{display:block;margin-bottom:4px}
-.feat span{color:var(--text2);font-size:14px}
-.privacy{text-align:center;padding:40px 0 80px}
-.privacy .big{font-size:clamp(28px,5vw,42px);font-weight:800;margin-bottom:12px}
-.privacy .big em{font-style:normal;color:var(--gold-l)}
-footer{border-top:1px solid var(--stroke);padding:32px 0;color:var(--text3);font-size:14px}
-footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-footer a{color:var(--text2);text-decoration:none}
-footer a:hover{color:var(--gold-l)}
-</style>
+<link rel="alternate" hreflang="x-default" href="https://www.monetia.net/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<header>
-  <nav class="wrap">
-    <a class="logo" href="#"><span class="logo-badge">M</span>Monetia</a>
-    <div class="links">
-      <a href="#features">Features</a>
-      <a href="#privacy">Privacy</a>
-      <a href="support.html">Support</a>
-      <a href="zh/" hreflang="zh-Hans" title="中文">中文</a>
+<div class="ambient"></div>
+
+<header id="hdr">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="Moneta">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3A3"/><stop offset=".55" stop-color="#E9C46A"/><stop offset="1" stop-color="#B8862B"/></linearGradient></defs><circle cx="26" cy="32" r="22" fill="url(#cg)"/><path d="M38 10a22 22 0 0 1 0 44 22 22 0 0 0 0-44z" fill="url(#cg)"/></svg>
+      <span>Moneta</span>
+    </a>
+    <nav class="links">
+      <a href="#ways" data-t="nav.ways"></a>
+      <a href="#details" data-t="nav.details"></a>
+      <a href="#mac" data-t="nav.mac"></a>
+      <a href="#privacy" data-t="nav.privacy"></a>
+    </nav>
+    <div class="actions">
+      <button class="lang" id="langbtn" aria-label="Switch language">EN</button>
+      <a class="btn-store" href="https://apps.apple.com/app/id6807001953" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span data-t="nav.store"></span>
+      </a>
     </div>
-  </nav>
+  </div>
 </header>
 
-<div class="hero wrap">
-  <h1>The AI ledger that<br><em>listens, sees & records</em></h1>
-  <p>Say it, snap it, chat it — Monetia books it for you. Budgets, reports, multi-currency, iCloud sync. Local-first.</p>
-  <div class="cta">
-    <a class="btn" href="https://apps.apple.com/app/monetia/id6807001953">Download on the App Store</a>
-    <a class="btn ghost" href="#features">See features</a>
-  </div>
-  <div class="badges">
-    <span>🎙 Voice</span><span>📷 Receipts</span><span>💬 Chat</span><span>💱 Multi-currency</span><span>🔒 Local-first</span><span>🌐 7 languages</span>
-  </div>
-</div>
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="film"><video autoplay muted loop playsinline preload="auto" poster="assets/film/moneta-film-poster.jpg" src="assets/film/moneta-film.mp4" aria-hidden="true"></video></div>
+  <div class="spot" id="spot"></div>
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow" data-t="hero.eyebrow"></span>
+      <h1 class="display" data-t-html="hero.title"></h1>
+      <p class="lead" data-t="hero.lead"></p>
+      <div class="cta">
+        <a class="btn-store" href="https://apps.apple.com/app/id6807001953" target="_blank" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span data-t="hero.cta"></span>
+        </a>
+        <button class="btn-ghost" id="playfilm"><span class="play"><svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9z"/></svg></span><span data-t="hero.film"></span></button>
+      </div>
+      <div class="meta">
+        <span><i></i><span data-t="hero.meta1"></span></span>
+        <span><i></i><span data-t="hero.meta2"></span></span>
+        <span><i></i><span data-t="hero.meta3"></span></span>
+      </div>
+    </div>
 
-<section id="features" class="wrap">
-  <h2>Three ways, seconds to book</h2>
-  <p class="sub">The AI understands them all</p>
-  <div class="grid">
-    <div class="card"><div class="ico">🎙</div><h3>Voice booking</h3>
-      <p>Say "lunch 35" and it's booked. On-device recognition first, AI audio understanding as backup — perfect on the go.</p></div>
-    <div class="card"><div class="ico">📷</div><h3>Receipt scanning</h3>
-      <p>Point at a receipt or invoice; OCR + AI extract amount, merchant, date and category. No more paper piles.</p></div>
-    <div class="card"><div class="ico">💬</div><h3>Chat booking</h3>
-      <p>Manage your ledger by chatting: "How much on food this month?" Create, update, query — all natural language.</p></div>
+    <div class="stage" id="stage">
+      <div class="ring"></div><div class="ring two"></div>
+      <div class="orb a"></div><div class="orb b"></div>
+      <div class="layer" id="layer">
+        <div class="phone">
+          <div class="glow"></div>
+          <div class="screen">
+            <img src="assets/shots/iphone-02-records.webp" alt="Moneta ledger" fetchpriority="high">
+            <div class="notch"></div>
+          </div>
+        </div>
+        <div class="glass chip-today">
+          <div class="k" data-t="hero.chip1k"></div>
+          <div class="v">¥128.50<small>−¥32.00</small></div>
+        </div>
+        <div class="glass chip-budget">
+          <div class="k" data-t="hero.chip2k"></div>
+          <div class="v">¥5,028<small>63%</small></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="glass chip-receipt">
+          <div class="ic">✓</div>
+          <div><div class="k" data-t="hero.chip3k"></div><div class="v">−¥128.50</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" data-t="hero.scroll"></div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
+
+<!-- ================= THREE WAYS ================= -->
+<section id="ways">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><span class="eyebrow" data-t="ways.eyebrow"></span><h2 class="display" data-t-html="ways.title"></h2></div>
+      <p class="lead" data-t="ways.lead"></p>
+    </div>
+    <div class="ways">
+      <article class="way reveal">
+        <div class="visual"><div class="frame">
+          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-03-capture.webp" alt="Scan a receipt" loading="lazy"><div class="tag t1"><span data-t="ways.t1.tagk"></span><b data-t="ways.t1.tagv"></b></div></div>
+        </div></div>
+        <div><div class="num">01 — <span data-t="ways.t1.kicker"></span></div>
+          <h3 data-t="ways.t1.title"></h3><p data-t="ways.t1.desc"></p>
+          <ul><li data-t="ways.t1.li1"></li><li data-t="ways.t1.li2"></li><li data-t="ways.t1.li3"></li></ul></div>
+      </article>
+      <article class="way flip reveal">
+        <div class="visual"><div class="frame">
+          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-05-ai-chat.webp" alt="AI chat" loading="lazy"><div class="tag t2"><span data-t="ways.t2.tagk"></span><b data-t="ways.t2.tagv"></b></div></div>
+        </div></div>
+        <div><div class="num">02 — <span data-t="ways.t2.kicker"></span></div>
+          <h3 data-t="ways.t2.title"></h3><p data-t="ways.t2.desc"></p>
+          <ul><li data-t="ways.t2.li1"></li><li data-t="ways.t2.li2"></li><li data-t="ways.t2.li3"></li></ul></div>
+      </article>
+      <article class="way reveal">
+        <div class="visual"><div class="frame">
+          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-04-reports.webp" alt="Reports" loading="lazy"><div class="tag t3"><span data-t="ways.t3.tagk"></span><b data-t="ways.t3.tagv"></b></div></div>
+        </div></div>
+        <div><div class="num">03 — <span data-t="ways.t3.kicker"></span></div>
+          <h3 data-t="ways.t3.title"></h3><p data-t="ways.t3.desc"></p>
+          <ul><li data-t="ways.t3.li1"></li><li data-t="ways.t3.li2"></li><li data-t="ways.t3.li3"></li></ul></div>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="wrap">
-  <h2>An assistant that gets you</h2>
-  <p class="sub">Booking is the start; insight is the goal</p>
-  <div class="two">
-    <div class="feat"><span class="ico">🎯</span><div><b>Budgets & smart alerts</b><span>80% warnings, 100% over-budget alerts, live monthly spend on your Lock Screen.</span></div></div>
-    <div class="feat"><span class="ico">📊</span><div><b>Rich reports</b><span>Category share and trends across day/week/month/year views.</span></div></div>
-    <div class="feat"><span class="ico">💱</span><div><b>Multi-currency</b><span>26 currencies built in; foreign spend auto-converts to your home currency.</span></div></div>
-    <div class="feat"><span class="ico">☁️</span><div><b>iCloud sync</b><span>Sync across your Apple devices — no account required.</span></div></div>
-    <div class="feat"><span class="ico">📤</span><div><b>CSV in & out</b><span>Take your data out anytime, or migrate in from other apps.</span></div></div>
-    <div class="feat"><span class="ico">🧩</span><div><b>Home Screen widgets</b><span>Today & month widgets at a glance, no app launch needed.</span></div></div>
+<!-- ================= BENTO ================= -->
+<section id="details">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><span class="eyebrow" data-t="bento.eyebrow"></span><h2 class="display" data-t-html="bento.title"></h2></div>
+      <p class="lead" data-t="bento.lead"></p>
+    </div>
+    <div class="bento">
+      <div class="tile t-a reveal"><img src="assets/shots/mac-05-ai-chat.webp" alt="AI chat on Mac" loading="lazy"><div class="shade"></div>
+        <div class="cap"><div class="k">Mac Catalyst</div><div class="t" data-t="bento.a.t"></div><p data-t="bento.a.p"></p></div></div>
+      <div class="tile t-b reveal d1">
+        <div class="widget">
+          <div class="brand"><svg viewBox="0 0 64 64"><circle cx="26" cy="32" r="22" fill="#F2C14E"/><path d="M38 10a22 22 0 0 1 0 44 22 22 0 0 0 0-44z" fill="#F2C14E"/></svg>Moneta</div>
+          <div class="row"><div class="metric"><div class="k" data-t="bento.w.today"></div><div class="v">¥128.50</div></div>
+            <div class="metric" style="text-align:right"><div class="k" data-t="bento.w.month"></div><div class="v small">¥5,028.00</div></div></div>
+          <div><div class="budget"><i></i></div><div class="foot" style="margin-top:8px"><span data-t="bento.w.budget"></span><span>¥8,000</span></div></div>
+        </div>
+        <div class="live"><i></i><span data-t="bento.w.live"></span></div>
+      </div>
+      <div class="tile t-c reveal d1"><div class="cur"><div class="big">26<small data-t="bento.c.k"></small></div>
+        <div class="list"><b>CNY</b><b>USD</b><b>EUR</b><b>JPY</b><b>GBP</b><b>KRW</b><b>HKD</b><b>SGD</b><b>AUD</b><b>CHF</b><b>CAD</b><b>THB</b></div></div></div>
+      <div class="tile t-d reveal d2"><div class="stat"><div class="ring-wrap"><svg width="140" height="140"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBE3A3"/><stop offset="1" stop-color="#B8862B"/></linearGradient></defs><circle class="bg" cx="70" cy="70" r="60"/><circle class="fg" cx="70" cy="70" r="60"/></svg><div class="pct">63%</div></div>
+        <div><div class="k" data-t="bento.d.k"></div><div class="l" data-t="bento.d.l"></div></div></div></div>
+      <div class="tile t-e reveal"><div class="stat"><div class="n">7<em>+</em></div><div class="l" data-t="bento.e.l"></div></div></div>
+      <div class="tile t-f reveal d1"><img src="assets/shots/iphone-02-records.webp" alt="Ledger" loading="lazy" style="object-position:70% 50%"><div class="shade"></div>
+        <div class="cap"><div class="k" data-t="bento.f.k"></div><div class="t" data-t="bento.f.t"></div><p data-t="bento.f.p"></p></div></div>
+      <div class="tile t-g reveal d2"><img src="assets/shots/iphone-01-dashboard-top.webp" alt="Balance" loading="lazy" style="object-position:50% 62%"><div class="shade"></div>
+        <div class="cap"><div class="k" data-t="bento.g.k"></div><div class="t" data-t="bento.g.t"></div><p data-t="bento.g.p"></p></div></div>
+    </div>
   </div>
 </section>
 
-<section id="privacy" class="wrap">
-  <div class="privacy">
-    <div class="big">Your data, <em>yours alone</em></div>
-    <p style="color:var(--text2);max-width:560px;margin:0 auto">Local-first storage, AI runs only when you ask; one-tap CSV export. No ads, no trackers, no data broking.</p>
-    <p style="margin-top:18px"><a href="privacy.html" style="color:var(--gold-l)">Read the Privacy Policy →</a></p>
+<!-- ================= MAC ================= -->
+<section id="mac" class="mac-sec">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><span class="eyebrow" data-t="mac.eyebrow"></span><h2 class="display" data-t-html="mac.title"></h2></div>
+      <p class="lead" data-t="mac.lead"></p>
+    </div>
+    <div class="laptop reveal" id="laptop">
+      <div class="tilt">
+        <div class="screen"><img src="assets/shots/mac-01-dashboard.webp" alt="Moneta for Mac" loading="lazy"></div>
+        <div class="base"></div>
+      </div>
+    </div>
+    <div class="mac-row reveal d1">
+      <figure><img src="assets/shots/mac-02-records.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/shots/mac-04-reports.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/shots/mac-05-ai-chat.webp" alt="" loading="lazy"></figure>
+    </div>
   </div>
 </section>
+
+<!-- ================= PRIVACY ================= -->
+<section id="privacy">
+  <div class="wrap privacy">
+    <div class="reveal">
+      <span class="eyebrow" data-t="privacy.eyebrow"></span>
+      <h2 class="display" data-t-html="privacy.title"></h2>
+      <p class="lead" data-t="privacy.lead"></p>
+      <ul class="points">
+        <li><span><b data-t="privacy.p1b"></b> — <span data-t="privacy.p1"></span></span></li>
+        <li><span><b data-t="privacy.p2b"></b> — <span data-t="privacy.p2"></span></span></li>
+        <li><span><b data-t="privacy.p3b"></b> — <span data-t="privacy.p3"></span></span></li>
+      </ul>
+      <p style="margin-top:28px"><a href="privacy.html" style="color:var(--gold2);border-bottom:1px solid rgba(233,196,106,.4);padding-bottom:2px" data-t="privacy.link"></a></p>
+    </div>
+    <div class="coin-stage reveal d1">
+      <div class="coin">
+        <div class="face"><svg viewBox="0 0 64 64"><circle cx="26" cy="32" r="22" fill="#7A5614"/><path d="M38 10a22 22 0 0 1 0 44 22 22 0 0 0 0-44z" fill="#7A5614"/></svg></div>
+        <div class="face back"><svg viewBox="0 0 64 64"><circle cx="26" cy="32" r="22" fill="#7A5614"/><path d="M38 10a22 22 0 0 1 0 44 22 22 0 0 0 0-44z" fill="#7A5614"/></svg></div>
+        <div class="shadow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final reveal">
+  <div class="wrap">
+    <span class="eyebrow" data-t="final.eyebrow"></span>
+    <h2 class="display" data-t-html="final.title"></h2>
+    <p data-t="final.lead"></p>
+    <div class="cta">
+      <a class="btn-store" href="https://apps.apple.com/app/id6807001953" target="_blank" rel="noopener">
+        <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span data-t="final.cta"></span>
+      </a>
+      <button class="btn-ghost" id="playfilm2"><span class="play"><svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9z"/></svg></span><span data-t="hero.film"></span></button>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer>
   <div class="wrap row">
-    <div>© 2026 Monetia · Made with ❤️ & AI</div>
-    <div><a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="zh/">中文</a></div>
+    <a class="brand" href="#top"><svg viewBox="0 0 64 64"><defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3A3"/><stop offset="1" stop-color="#B8862B"/></linearGradient></defs><circle cx="26" cy="32" r="22" fill="url(#cg2)"/><path d="M38 10a22 22 0 0 1 0 44 22 22 0 0 0 0-44z" fill="url(#cg2)"/></svg><span>Moneta</span></a>
+    <div>© 2026 Moneta · <span data-t="footer.made"></span></div>
+    <div><a href="privacy.html" data-t="nav.privacy"></a> · <a href="support.html" data-t="nav.support"></a></div>
   </div>
 </footer>
+
+<dialog id="filmDialog">
+  <div class="inner">
+    <button class="close" id="filmClose" aria-label="Close">✕</button>
+    <video controls preload="metadata" src="assets/film/moneta-film.mp4"></video>
+  </div>
+</dialog>
+
+<script src="assets/site.js"></script>
 </body>
 </html>
