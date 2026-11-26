@@ -1,0 +1,7 @@
+# Moneta — www.monetia.net
+# Search engines and AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, …) are welcome.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.monetia.net/sitemap.xml

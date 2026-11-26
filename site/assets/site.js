@@ -6,6 +6,13 @@ document.documentElement.classList.add('js');
 const I18N = {
   zh: {
     'meta.title': 'Moneta — 会听会看的 AI 记账本', 'meta.desc': 'Moneta：语音、拍照、对话三种方式 AI 自动记账。预算、报表、多币种、iCloud 同步，本地优先。iPhone、iPad、Mac。', 'meta.og': 'Moneta — 会听会看的 AI 记账本',
+    'faq.eyebrow': '常见问题', 'faq.title': '你可能想问', 'faq.lead': '关于价格、设备、识别方式与数据去向。', 'faq.more': '查看全部支持问题 →',
+    'faq.q1': 'Moneta 多少钱？', 'faq.a1': 'App Store 一次性买断（美区 US$1.99，各区域定价不同）。没有订阅，没有账号，没有广告。',
+    'faq.q2': '支持哪些设备？', 'faq.a2': 'iPhone（iOS 17+）、iPad（iPadOS 17+）和 Mac（macOS 14+，Mac Catalyst）。一次购买三端通用，账本经你自己的 iCloud 同步。',
+    'faq.q3': '语音记账怎么用？', 'faq.a3': '说一句「午餐 35」即入账。优先本地语音识别，AI 听音理解兜底，需在系统设置中开启麦克风与语音识别权限。',
+    'faq.q4': '打小票能识别什么？', 'faq.a4': 'OCR 与 AI 自动提取金额、商户、日期与分类，一次最多 3 张，并显示置信度方便核对。确认即入账。',
+    'faq.q5': '用的是哪个 AI？数据会上传吗？', 'faq.a5': '内置 Gemini（Firebase AI Logic），也可在设置中接入任意 OpenAI 兼容接口（DeepSeek、Groq、OpenRouter、Ollama 等）。账本本地优先存储，只有你发给 AI 的内容会在请求时处理。',
+    'faq.q6': '数据能导出或迁移吗？', 'faq.a6': '设置 → 数据 可随时导出 / 导入 CSV，Excel、Numbers 可直接打开。内置 26 种货币汇率，离线可用。',
     'nav.ways': '三种方式', 'nav.details': '细节', 'nav.mac': 'Mac', 'nav.privacy': '隐私', 'nav.support': '支持', 'nav.store': 'App Store',
     'hero.eyebrow': 'Juno Moneta · AI 记账',
     'hero.title': '钱的事，<br><em>一句话</em>。',
@@ -43,7 +50,14 @@ const I18N = {
     'marquee': ['会听 · 会看 · 会记', 'CNY', 'USD', 'EUR', 'JPY', 'GBP', 'KRW', '本地优先', 'iCloud 同步', 'Mac · iPad · iPhone', '7 种语言', '预算 · 报表 · 小组件']
   },
   en: {
-    'meta.title': 'Moneta — The AI ledger that listens, sees & records', 'meta.desc': 'Say it, snap it, chat it — Moneta books it for you. Budgets, reports, multi-currency, iCloud sync. Local-first.', 'meta.og': 'Moneta — The AI ledger that listens, sees & records',
+    'meta.title': 'Moneta — AI Expense Tracker: Voice, Receipt Scan & Chat | iPhone, iPad, Mac', 'meta.desc': 'Moneta is the AI ledger that listens, sees and records. Book expenses by voice, receipt scan or chat. Budgets, reports, 26 currencies, iCloud sync, local-first. For iPhone, iPad and Mac.', 'meta.og': 'Moneta — The AI ledger that listens, sees & records',
+    'faq.eyebrow': 'FAQ', 'faq.title': 'Questions, <em>answered</em>', 'faq.lead': 'Pricing, devices, how recognition works and where your data goes.', 'faq.more': 'See all support questions →',
+    'faq.q1': 'How much does Moneta cost?', 'faq.a1': 'A one-time purchase on the App Store (US$1.99 in the US store; prices vary by region). No subscription, no account, no ads.',
+    'faq.q2': 'Which devices are supported?', 'faq.a2': 'iPhone (iOS 17+), iPad (iPadOS 17+) and Mac (macOS 14+, Mac Catalyst). One purchase covers all three, and the ledger syncs through your own iCloud.',
+    'faq.q3': 'How does voice booking work?', 'faq.a3': 'Say "Lunch 35" and it is booked. On-device speech recognition runs first, with AI audio understanding as a fallback. Microphone and Speech Recognition permissions are required.',
+    'faq.q4': 'What does receipt scanning extract?', 'faq.a4': 'OCR and AI pull the amount, merchant, date and category from a photo — up to 3 receipts at a time — and show a confidence so you can double-check before booking.',
+    'faq.q5': 'Which AI does it use, and is my data sent anywhere?', 'faq.a5': 'Gemini is built in through Firebase AI Logic, and you can connect any OpenAI-compatible endpoint instead (DeepSeek, Groq, OpenRouter, Ollama). The ledger is local-first; only what you send to the AI is processed, and only when you ask.',
+    'faq.q6': 'Can I export or migrate my data?', 'faq.a6': 'Yes — CSV export and import anytime under Settings → Data; the files open in Excel or Numbers. 26 currencies with built-in rates work offline.',
     'nav.ways': 'Three ways', 'nav.details': 'Details', 'nav.mac': 'Mac', 'nav.privacy': 'Privacy', 'nav.support': 'Support', 'nav.store': 'App Store',
     'hero.eyebrow': 'Juno Moneta · The AI ledger',
     'hero.title': 'Money, in <em>one sentence</em>.',
@@ -94,16 +108,21 @@ function applyLang() {
   document.querySelectorAll('[data-t]').forEach(el => { const v = d[el.dataset.t]; if (v != null) el.textContent = v; });
   document.querySelectorAll('[data-t-html]').forEach(el => { const v = d[el.dataset.tHtml]; if (v != null) el.innerHTML = v; });
   document.getElementById('langbtn').textContent = lang === 'zh' ? 'EN' : '中文';
-  document.title = lang === 'zh' ? 'Moneta — 会听会看的 AI 记账本' : 'Moneta — The AI ledger that listens, sees & records';
+  document.title = d['meta.title'];
   // marquee (duplicated for a seamless loop)
   const items = d.marquee.map(s => `<span>${s}</span>`).join('');
   document.getElementById('marquee').innerHTML = items + items;
 }
-document.getElementById('langbtn').addEventListener('click', e => {
+// Root page: the control is a real link to /zh/ (crawlable). With JS we switch
+// language in place instead of navigating. Mirror pages keep navigation.
+const langBtn = document.getElementById('langbtn');
+langBtn.addEventListener('click', e => {
   if (forced) return; // <a href="/"> handles it on mirror pages
   e.preventDefault();
   lang = lang === 'zh' ? 'en' : 'zh'; localStorage.setItem(store, lang); applyLang();
+  langBtn.href = lang === 'zh' ? '/' : '/zh/';
 });
+langBtn.href = lang === 'zh' ? '/' : '/zh/';
 
 /* nav state */
 const hdr = document.getElementById('hdr');

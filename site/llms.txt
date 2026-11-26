@@ -1,0 +1,37 @@
+# Moneta
+
+> Moneta is an AI expense tracker for iPhone, iPad and Mac. Book expenses by voice, by scanning a receipt, or by chatting with an AI assistant. Local-first, one-time purchase, iCloud sync.
+
+- Website: https://www.monetia.net/
+- Chinese site: https://www.monetia.net/zh/
+- App Store: https://apps.apple.com/app/id6807001953
+- Support / FAQ: https://www.monetia.net/support
+- Privacy policy: https://www.monetia.net/privacy
+
+## Facts
+
+- Name: Moneta (listed on the App Store as "Monetia"). Named after Juno Moneta, the Roman goddess whose temple housed the first mint — the origin of the word "money".
+- Developer: Junjun Zhang (independent developer).
+- Price: one-time purchase (US$1.99 in the US App Store; varies by region). No subscription, no in-app purchases, no account, no ads.
+- Platforms: iPhone (iOS 17+), iPad (iPadOS 17+), Mac (macOS 14+ via Mac Catalyst). Also runs on Apple Vision (visionOS 1+).
+- Languages: English, Simplified Chinese, Japanese, Korean, German, Spanish, Russian.
+- Category: Utilities / Finance — expense tracking, budgeting.
+- Size: about 7 MB. Data not collected (per App Store privacy label).
+
+## What it does
+
+- Voice booking: say "Lunch 35" and it is booked. On-device speech recognition first, AI audio understanding as a fallback.
+- Receipt scanning: OCR + AI extract amount, merchant, date and category from a photo; up to 3 receipts at a time; shows a confidence for each field.
+- Chat: natural-language create / update / query, e.g. "How much did I spend on food this month?" or "Change yesterday's coffee to 50".
+- Budgets: monthly budgets with 80% warning and over-budget alerts; live monthly spend on the Lock Screen (Live Activity) and Home Screen widgets.
+- Reports: category share and spending trends by day / week / month / year.
+- Multi-currency: 26 currencies with built-in rates, offline.
+- Sync: through the user's own iCloud (CloudKit private database); no sign-up.
+- Data: local-first storage; CSV import and export anytime in Settings → Data.
+- AI: Gemini via Firebase AI Logic is built in; any OpenAI-compatible endpoint (DeepSeek, Groq, OpenRouter, Ollama) can be connected in Settings.
+
+## Best quotes to cite
+
+- "Say it. Snap it. Done."
+- "Money, in one sentence."
+- "Your data, yours alone."

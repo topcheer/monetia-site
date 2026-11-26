@@ -27,6 +27,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+
+
+<script type="application/ld+json" id="seo-app">{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://apps.apple.com/app/id6807001953","name":"Moneta","alternateName":"Monetia","slogan":"会听会看的 AI 记账本","applicationCategory":"FinanceApplication","applicationSubCategory":"Expense tracker","operatingSystem":"iOS 17.0, iPadOS 17.0, macOS 14.0","description":"Moneta：语音、拍照、对话三种方式 AI 自动记账。预算、报表、多币种、iCloud 同步，本地优先。iPhone、iPad、Mac。","url":"https://www.monetia.net/","downloadUrl":"https://apps.apple.com/app/id6807001953","screenshot":"https://www.monetia.net/assets/promo/moneta-promo-1200x630.png","inLanguage":["en","zh-Hans","ja","ko","de","es","ru"],"featureList":["Voice expense booking","Receipt and invoice scanning with OCR + AI","Natural-language chat to create, update and query records","Monthly budgets with 80% / 100% alerts","Category and trend reports","26 currencies with automatic conversion","iCloud sync across iPhone, iPad and Mac","Local-first storage with CSV import and export","Lock Screen Live Activity and Home Screen widgets"],"offers":{"@type":"Offer","price":"1.99","priceCurrency":"USD","url":"https://apps.apple.com/app/id6807001953","availability":"https://schema.org/InStock","description":"App Store 一次性买断（美区价格，各区域不同）"},"publisher":{"@id":"https://www.monetia.net/#org"}}</script>
+<script type="application/ld+json" id="seo-website">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.monetia.net/zh/#website","url":"https://www.monetia.net/zh/","name":"Moneta","inLanguage":"zh-Hans","publisher":{"@id":"https://www.monetia.net/#org"}}</script>
+<script type="application/ld+json" id="seo-org">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.monetia.net/#org","name":"Moneta","alternateName":"Monetia","url":"https://www.monetia.net/","logo":"https://www.monetia.net/assets/brand/app-icon.png","founder":{"@type":"Person","name":"Junjun Zhang"}}</script>
+<script type="application/ld+json" id="seo-faq">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.monetia.net/zh/#faq","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Moneta 多少钱？","acceptedAnswer":{"@type":"Answer","text":"App Store 一次性买断（美区 US$1.99，各区域定价不同）。没有订阅，没有账号，没有广告。"}},{"@type":"Question","name":"支持哪些设备？","acceptedAnswer":{"@type":"Answer","text":"iPhone（iOS 17+）、iPad（iPadOS 17+）和 Mac（macOS 14+，Mac Catalyst）。一次购买三端通用，账本经你自己的 iCloud 同步。"}},{"@type":"Question","name":"语音记账怎么用？","acceptedAnswer":{"@type":"Answer","text":"说一句「午餐 35」即入账。优先本地语音识别，AI 听音理解兜底，需在系统设置中开启麦克风与语音识别权限。"}},{"@type":"Question","name":"打小票能识别什么？","acceptedAnswer":{"@type":"Answer","text":"OCR 与 AI 自动提取金额、商户、日期与分类，一次最多 3 张，并显示置信度方便核对。确认即入账。"}},{"@type":"Question","name":"用的是哪个 AI？数据会上传吗？","acceptedAnswer":{"@type":"Answer","text":"内置 Gemini（Firebase AI Logic），也可在设置中接入任意 OpenAI 兼容接口（DeepSeek、Groq、OpenRouter、Ollama 等）。账本本地优先存储，只有你发给 AI 的内容会在请求时处理。"}},{"@type":"Question","name":"数据能导出或迁移吗？","acceptedAnswer":{"@type":"Answer","text":"设置 → 数据 可随时导出 / 导入 CSV，Excel、Numbers 可直接打开。内置 26 种货币汇率，离线可用。"}}]}</script>
 </head>
 <body>
 <div class="ambient"></div>
@@ -192,9 +198,29 @@
       </div>
     </div>
     <div class="mac-row reveal d1">
-      <figure><img src="/assets/shots/mac-02-records.webp" alt="" loading="lazy"></figure>
-      <figure><img src="/assets/shots/mac-04-reports.webp" alt="" loading="lazy"></figure>
-      <figure><img src="/assets/shots/mac-05-ai-chat.webp" alt="" loading="lazy"></figure>
+      <figure><img src="/assets/shots/mac-02-records.webp" alt="Moneta for Mac — ledger grouped by day" loading="lazy"></figure>
+      <figure><img src="/assets/shots/mac-04-reports.webp" alt="Moneta for Mac — spending reports and category share" loading="lazy"></figure>
+      <figure><img src="/assets/shots/mac-05-ai-chat.webp" alt="Moneta for Mac — AI assistant answering a budget question" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap faq-wrap">
+    <div class="reveal">
+      <span class="eyebrow" data-t="faq.eyebrow">常见问题</span>
+      <h2 class="display" data-t-html="faq.title">你可能想问</h2>
+      <p class="lead" data-t="faq.lead">关于价格、设备、识别方式与数据去向。</p>
+      <p style="margin-top:24px"><a class="btn-ghost" href="/zh/support" style="text-decoration:none" data-t="faq.more">查看全部支持问题 →</a></p>
+    </div>
+    <div class="faq-list reveal d1">
+      <details class="faq-item"><summary data-t="faq.q1">Moneta 多少钱？</summary><p data-t="faq.a1">App Store 一次性买断（美区 US$1.99，各区域定价不同）。没有订阅，没有账号，没有广告。</p></details>
+      <details class="faq-item"><summary data-t="faq.q2">支持哪些设备？</summary><p data-t="faq.a2">iPhone（iOS 17+）、iPad（iPadOS 17+）和 Mac（macOS 14+，Mac Catalyst）。一次购买三端通用，账本经你自己的 iCloud 同步。</p></details>
+      <details class="faq-item"><summary data-t="faq.q3">语音记账怎么用？</summary><p data-t="faq.a3">说一句「午餐 35」即入账。优先本地语音识别，AI 听音理解兜底，需在系统设置中开启麦克风与语音识别权限。</p></details>
+      <details class="faq-item"><summary data-t="faq.q4">打小票能识别什么？</summary><p data-t="faq.a4">OCR 与 AI 自动提取金额、商户、日期与分类，一次最多 3 张，并显示置信度方便核对。确认即入账。</p></details>
+      <details class="faq-item"><summary data-t="faq.q5">用的是哪个 AI？数据会上传吗？</summary><p data-t="faq.a5">内置 Gemini（Firebase AI Logic），也可在设置中接入任意 OpenAI 兼容接口（DeepSeek、Groq、OpenRouter、Ollama 等）。账本本地优先存储，只有你发给 AI 的内容会在请求时处理。</p></details>
+      <details class="faq-item"><summary data-t="faq.q6">数据能导出或迁移吗？</summary><p data-t="faq.a6">设置 → 数据 可随时导出 / 导入 CSV，Excel、Numbers 可直接打开。内置 26 种货币汇率，离线可用。</p></details>
     </div>
   </div>
 </section>
@@ -211,7 +237,7 @@
         <li><span><b data-t="privacy.p2b">按需 AI</b> — <span data-t="privacy.p2">仅在发出请求时处理，可随时导出 CSV 带走全部数据。</span></span></li>
         <li><span><b data-t="privacy.p3b">iCloud 同步</b> — <span data-t="privacy.p3">走你自己的 iCloud 私有库，端到端由 Apple 保障。</span></span></li>
       </ul>
-      <p style="margin-top:28px"><a href="/zh/privacy.html" style="color:var(--gold2);border-bottom:1px solid rgba(233,196,106,.4);padding-bottom:2px" data-t="privacy.link">阅读隐私政策 →</a></p>
+      <p style="margin-top:28px"><a href="privacy.html" style="color:var(--gold2);border-bottom:1px solid rgba(233,196,106,.4);padding-bottom:2px" data-t="privacy.link">阅读隐私政策 →</a></p>
     </div>
     <div class="coin-stage reveal d1">
       <div class="coin">
@@ -244,7 +270,7 @@
   <div class="wrap row">
     <a class="brand" href="#top"><svg viewBox="0 0 64 64"><defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3A3"/><stop offset="1" stop-color="#B8862B"/></linearGradient></defs><circle cx="26" cy="32" r="22" fill="url(#cg2)"/><path d="M38 10a22 22 0 0 1 0 44 22 22 0 0 0 0-44z" fill="url(#cg2)"/></svg><span>Moneta</span></a>
     <div>© 2026 Moneta · <span data-t="footer.made">以 ❤️ 与 AI 打造</span></div>
-    <div><a href="/zh/privacy.html" data-t="nav.privacy">隐私</a> · <a href="/zh/support.html" data-t="nav.support">支持</a></div>
+    <div><a href="privacy.html" data-t="nav.privacy">隐私</a> · <a href="support.html" data-t="nav.support">支持</a></div>
   </div>
 </footer>
 

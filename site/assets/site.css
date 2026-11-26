@@ -215,6 +215,19 @@ section{padding:130px 0;position:relative}
 .mac-row figure:hover{transform:translateY(-4px);border-color:rgba(233,196,106,.35)}
 .mac-row img{aspect-ratio:16/10;object-fit:cover;width:100%}
 
+/* faq */
+.faq-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+.faq-wrap .btn-ghost{padding:10px 22px;text-decoration:none}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;cursor:pointer;padding:22px 0;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--paper);display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .3s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:22px;color:var(--gold);transition:transform .3s var(--ease);flex-shrink:0}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{color:var(--gold2)}
+.faq-item p{color:var(--muted);font-size:15.5px;line-height:1.8;padding:0 32px 24px 0}
+@media (max-width:1024px){.faq-wrap{grid-template-columns:1fr;gap:28px}}
+
 /* privacy */
 .privacy{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .privacy h2{font-size:clamp(38px,5vw,72px);margin:18px 0 22px}

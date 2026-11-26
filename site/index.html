@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Moneta — 会听会看的 AI 记账本 · The AI ledger that listens, sees & records</title>
-<meta name="description" content="Moneta：语音、拍照、对话三种方式 AI 自动记账。预算、报表、多币种、iCloud 同步，本地优先。iPhone、iPad、Mac。">
+<title>Moneta — AI Expense Tracker: Voice, Receipt Scan & Chat | iPhone, iPad, Mac</title>
+<meta name="description" content="Moneta is the AI ledger that listens, sees and records. Book expenses by voice, receipt scan or chat. Budgets, reports, 26 currencies, iCloud sync, local-first. For iPhone, iPad and Mac.">
 <meta property="og:title" content="Moneta — 会听会看的 AI 记账本">
 <meta property="og:description" content="说一句、拍一张、聊两句，自动入账。Say it. Snap it. Done.">
 <meta property="og:type" content="website">
@@ -27,6 +27,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+
+
+<script type="application/ld+json" id="seo-app">{"@context":"https://schema.org","@type":"MobileApplication","@id":"https://apps.apple.com/app/id6807001953","name":"Moneta","alternateName":"Monetia","slogan":"Say it. Snap it. Done.","applicationCategory":"FinanceApplication","applicationSubCategory":"Expense tracker","operatingSystem":"iOS 17.0, iPadOS 17.0, macOS 14.0","description":"Moneta is the AI ledger that listens, sees and records. Book expenses by voice, receipt scan or chat. Budgets, reports, 26 currencies, iCloud sync, local-first. For iPhone, iPad and Mac.","url":"https://www.monetia.net/","downloadUrl":"https://apps.apple.com/app/id6807001953","screenshot":"https://www.monetia.net/assets/promo/moneta-promo-1200x630.png","inLanguage":["en","zh-Hans","ja","ko","de","es","ru"],"featureList":["Voice expense booking","Receipt and invoice scanning with OCR + AI","Natural-language chat to create, update and query records","Monthly budgets with 80% / 100% alerts","Category and trend reports","26 currencies with automatic conversion","iCloud sync across iPhone, iPad and Mac","Local-first storage with CSV import and export","Lock Screen Live Activity and Home Screen widgets"],"offers":{"@type":"Offer","price":"1.99","priceCurrency":"USD","url":"https://apps.apple.com/app/id6807001953","availability":"https://schema.org/InStock","description":"One-time purchase on the App Store (US store price; varies by region)"},"publisher":{"@id":"https://www.monetia.net/#org"}}</script>
+<script type="application/ld+json" id="seo-website">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.monetia.net/#website","url":"https://www.monetia.net/","name":"Moneta","inLanguage":"en","publisher":{"@id":"https://www.monetia.net/#org"}}</script>
+<script type="application/ld+json" id="seo-org">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.monetia.net/#org","name":"Moneta","alternateName":"Monetia","url":"https://www.monetia.net/","logo":"https://www.monetia.net/assets/brand/app-icon.png","founder":{"@type":"Person","name":"Junjun Zhang"}}</script>
+<script type="application/ld+json" id="seo-faq">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.monetia.net/#faq","inLanguage":"en","mainEntity":[{"@type":"Question","name":"How much does Moneta cost?","acceptedAnswer":{"@type":"Answer","text":"A one-time purchase on the App Store (US$1.99 in the US store; prices vary by region). No subscription, no account, no ads."}},{"@type":"Question","name":"Which devices are supported?","acceptedAnswer":{"@type":"Answer","text":"iPhone (iOS 17+), iPad (iPadOS 17+) and Mac (macOS 14+, Mac Catalyst). One purchase covers all three, and the ledger syncs through your own iCloud."}},{"@type":"Question","name":"How does voice booking work?","acceptedAnswer":{"@type":"Answer","text":"Say \"Lunch 35\" and it is booked. On-device speech recognition runs first, with AI audio understanding as a fallback. Microphone and Speech Recognition permissions are required."}},{"@type":"Question","name":"What does receipt scanning extract?","acceptedAnswer":{"@type":"Answer","text":"OCR and AI pull the amount, merchant, date and category from a photo — up to 3 receipts at a time — and show a confidence so you can double-check before booking."}},{"@type":"Question","name":"Which AI does it use, and is my data sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"Gemini is built in through Firebase AI Logic, and you can connect any OpenAI-compatible endpoint instead (DeepSeek, Groq, OpenRouter, Ollama). The ledger is local-first; only what you send to the AI is processed, and only when you ask."}},{"@type":"Question","name":"Can I export or migrate my data?","acceptedAnswer":{"@type":"Answer","text":"Yes — CSV export and import anytime under Settings → Data; the files open in Excel or Numbers. 26 currencies with built-in rates work offline."}}]}</script>
 </head>
 <body>
 <div class="ambient"></div>
@@ -38,16 +44,16 @@
       <span>Moneta</span>
     </a>
     <nav class="links">
-      <a href="#ways" data-t="nav.ways"></a>
-      <a href="#details" data-t="nav.details"></a>
-      <a href="#mac" data-t="nav.mac"></a>
-      <a href="#privacy" data-t="nav.privacy"></a>
+      <a href="#ways" data-t="nav.ways">Three ways</a>
+      <a href="#details" data-t="nav.details">Details</a>
+      <a href="#mac" data-t="nav.mac">Mac</a>
+      <a href="#privacy" data-t="nav.privacy">Privacy</a>
     </nav>
     <div class="actions">
-      <button class="lang" id="langbtn" aria-label="Switch language">EN</button>
+      <a class="lang" id="langbtn" href="/zh/" hreflang="zh-Hans" lang="zh-Hans" aria-label="Switch to Chinese">中文</a>
       <a class="btn-store" href="https://apps.apple.com/app/id6807001953" target="_blank" rel="noopener">
         <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-        <span data-t="nav.store"></span>
+        <span data-t="nav.store">App Store</span>
       </a>
     </div>
   </div>
@@ -60,20 +66,20 @@
   <div class="spot" id="spot"></div>
   <div class="wrap grid">
     <div>
-      <span class="eyebrow" data-t="hero.eyebrow"></span>
-      <h1 class="display" data-t-html="hero.title"></h1>
-      <p class="lead" data-t="hero.lead"></p>
+      <span class="eyebrow" data-t="hero.eyebrow">Juno Moneta · The AI ledger</span>
+      <h1 class="display" data-t-html="hero.title">Money, in <em>one sentence</em>.</h1>
+      <p class="lead" data-t="hero.lead">Say it, snap it, chat it — Moneta books it for you. Budgets, reports, multi-currency, iCloud sync. Local-first.</p>
       <div class="cta">
         <a class="btn-store" href="https://apps.apple.com/app/id6807001953" target="_blank" rel="noopener">
           <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-          <span data-t="hero.cta"></span>
+          <span data-t="hero.cta">Download on App Store</span>
         </a>
-        <button class="btn-ghost" id="playfilm"><span class="play"><svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9z"/></svg></span><span data-t="hero.film"></span></button>
+        <button class="btn-ghost" id="playfilm"><span class="play"><svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9z"/></svg></span><span data-t="hero.film">Watch the film</span></button>
       </div>
       <div class="meta">
-        <span><i></i><span data-t="hero.meta1"></span></span>
-        <span><i></i><span data-t="hero.meta2"></span></span>
-        <span><i></i><span data-t="hero.meta3"></span></span>
+        <span><i></i><span data-t="hero.meta1">iPhone · iPad · Mac</span></span>
+        <span><i></i><span data-t="hero.meta2">7 languages</span></span>
+        <span><i></i><span data-t="hero.meta3">Local-first · iCloud sync</span></span>
       </div>
     </div>
 
@@ -89,22 +95,22 @@
           </div>
         </div>
         <div class="glass chip-today">
-          <div class="k" data-t="hero.chip1k"></div>
+          <div class="k" data-t="hero.chip1k">Today</div>
           <div class="v">¥128.50<small>−¥32.00</small></div>
         </div>
         <div class="glass chip-budget">
-          <div class="k" data-t="hero.chip2k"></div>
+          <div class="k" data-t="hero.chip2k">Monthly budget</div>
           <div class="v">¥5,028<small>63%</small></div>
           <div class="bar"><i></i></div>
         </div>
         <div class="glass chip-receipt">
           <div class="ic">✓</div>
-          <div><div class="k" data-t="hero.chip3k"></div><div class="v">−¥128.50</div></div>
+          <div><div class="k" data-t="hero.chip3k">Receipt booked</div><div class="v">−¥128.50</div></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="scroll-hint" data-t="hero.scroll"></div>
+  <div class="scroll-hint" data-t="hero.scroll">Scroll</div>
 </section>
 
 <!-- ================= MARQUEE ================= -->
@@ -114,33 +120,33 @@
 <section id="ways">
   <div class="wrap">
     <div class="section-head reveal">
-      <div><span class="eyebrow" data-t="ways.eyebrow"></span><h2 class="display" data-t-html="ways.title"></h2></div>
-      <p class="lead" data-t="ways.lead"></p>
+      <div><span class="eyebrow" data-t="ways.eyebrow">Three ways</span><h2 class="display" data-t-html="ways.title">Say it, snap it, <br><em>chat it</em>.</h2></div>
+      <p class="lead" data-t="ways.lead">The AI understands all of them. On the train, at the table, after the drive — three seconds and it is booked.</p>
     </div>
     <div class="ways">
       <article class="way reveal">
         <div class="visual"><div class="frame">
-          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-03-capture.webp" alt="Scan a receipt" loading="lazy"><div class="tag t1"><span data-t="ways.t1.tagk"></span><b data-t="ways.t1.tagv"></b></div></div>
+          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-03-capture.webp" alt="Scan a receipt" loading="lazy"><div class="tag t1"><span data-t="ways.t1.tagk">Recognized</span><b data-t="ways.t1.tagv">−¥128.50</b></div></div>
         </div></div>
-        <div><div class="num">01 — <span data-t="ways.t1.kicker"></span></div>
-          <h3 data-t="ways.t1.title"></h3><p data-t="ways.t1.desc"></p>
-          <ul><li data-t="ways.t1.li1"></li><li data-t="ways.t1.li2"></li><li data-t="ways.t1.li3"></li></ul></div>
+        <div><div class="num">01 — <span data-t="ways.t1.kicker">Snap</span></div>
+          <h3 data-t="ways.t1.title">A receipt becomes a record</h3><p data-t="ways.t1.desc">Scan a receipt or invoice. OCR and AI extract the amount, merchant, date and category — confirm and it is booked.</p>
+          <ul><li data-t="ways.t1.li1">Up to 3 receipts, recognized one by one</li><li data-t="ways.t1.li2">Paste email text, get a record</li><li data-t="ways.t1.li3">Confidence shown so you can double-check</li></ul></div>
       </article>
       <article class="way flip reveal">
         <div class="visual"><div class="frame">
-          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-05-ai-chat.webp" alt="AI chat" loading="lazy"><div class="tag t2"><span data-t="ways.t2.tagk"></span><b data-t="ways.t2.tagv"></b></div></div>
+          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-05-ai-chat.webp" alt="AI chat" loading="lazy"><div class="tag t2"><span data-t="ways.t2.tagk">Dining this month</span><b data-t="ways.t2.tagv">¥3,870</b></div></div>
         </div></div>
-        <div><div class="num">02 — <span data-t="ways.t2.kicker"></span></div>
-          <h3 data-t="ways.t2.title"></h3><p data-t="ways.t2.desc"></p>
-          <ul><li data-t="ways.t2.li1"></li><li data-t="ways.t2.li2"></li><li data-t="ways.t2.li3"></li></ul></div>
+        <div><div class="num">02 — <span data-t="ways.t2.kicker">Ask</span></div>
+          <h3 data-t="ways.t2.title">Talk to your money</h3><p data-t="ways.t2.desc">Manage your ledger by chatting: "How much on food this month?" "Change yesterday\u2019s one to 50." Create, update, query — all natural language.</p>
+          <ul><li data-t="ways.t2.li1">Budget at a glance</li><li data-t="ways.t2.li2">Stop the AI mid-thought</li><li data-t="ways.t2.li3">Bring any OpenAI-compatible endpoint</li></ul></div>
       </article>
       <article class="way reveal">
         <div class="visual"><div class="frame">
-          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-04-reports.webp" alt="Reports" loading="lazy"><div class="tag t3"><span data-t="ways.t3.tagk"></span><b data-t="ways.t3.tagv"></b></div></div>
+          <div class="mini-phone"><div class="halo"></div><img src="assets/shots/iphone-04-reports.webp" alt="Reports" loading="lazy"><div class="tag t3"><span data-t="ways.t3.tagk">This month</span><b data-t="ways.t3.tagv">¥5,028</b></div></div>
         </div></div>
-        <div><div class="num">03 — <span data-t="ways.t3.kicker"></span></div>
-          <h3 data-t="ways.t3.title"></h3><p data-t="ways.t3.desc"></p>
-          <ul><li data-t="ways.t3.li1"></li><li data-t="ways.t3.li2"></li><li data-t="ways.t3.li3"></li></ul></div>
+        <div><div class="num">03 — <span data-t="ways.t3.kicker">See</span></div>
+          <h3 data-t="ways.t3.title">Where it all goes</h3><p data-t="ways.t3.desc">Category share and spending trends across day, week, month and year views.</p>
+          <ul><li data-t="ways.t3.li1">80% warning, 100% over-budget alert</li><li data-t="ways.t3.li2">Live on your Lock Screen and widgets</li><li data-t="ways.t3.li3">CSV in and out anytime</li></ul></div>
       </article>
     </div>
   </div>
@@ -150,30 +156,30 @@
 <section id="details">
   <div class="wrap">
     <div class="section-head reveal">
-      <div><span class="eyebrow" data-t="bento.eyebrow"></span><h2 class="display" data-t-html="bento.title"></h2></div>
-      <p class="lead" data-t="bento.lead"></p>
+      <div><span class="eyebrow" data-t="bento.eyebrow">Details</span><h2 class="display" data-t-html="bento.title">Considered, <em>everywhere</em>.</h2></div>
+      <p class="lead" data-t="bento.lead">From the widget to the desktop, 26 currencies to 7 languages — Moneta stays restrained and clear at every size.</p>
     </div>
     <div class="bento">
       <div class="tile t-a reveal"><img src="assets/shots/mac-05-ai-chat.webp" alt="AI chat on Mac" loading="lazy"><div class="shade"></div>
-        <div class="cap"><div class="k">Mac Catalyst</div><div class="t" data-t="bento.a.t"></div><p data-t="bento.a.p"></p></div></div>
+        <div class="cap"><div class="k">Mac Catalyst</div><div class="t" data-t="bento.a.t">Room to breathe</div><p data-t="bento.a.p">AI chat, reports and the ledger side by side — re-laid-out for wide screens.</p></div></div>
       <div class="tile t-b reveal d1">
         <div class="widget">
           <div class="brand"><svg viewBox="0 0 64 64"><circle cx="26" cy="32" r="22" fill="#F2C14E"/><path d="M38 10a22 22 0 0 1 0 44 22 22 0 0 0 0-44z" fill="#F2C14E"/></svg>Moneta</div>
-          <div class="row"><div class="metric"><div class="k" data-t="bento.w.today"></div><div class="v">¥128.50</div></div>
-            <div class="metric" style="text-align:right"><div class="k" data-t="bento.w.month"></div><div class="v small">¥5,028.00</div></div></div>
-          <div><div class="budget"><i></i></div><div class="foot" style="margin-top:8px"><span data-t="bento.w.budget"></span><span>¥8,000</span></div></div>
+          <div class="row"><div class="metric"><div class="k" data-t="bento.w.today">Today</div><div class="v">¥128.50</div></div>
+            <div class="metric" style="text-align:right"><div class="k" data-t="bento.w.month">This month</div><div class="v small">¥5,028.00</div></div></div>
+          <div><div class="budget"><i></i></div><div class="foot" style="margin-top:8px"><span data-t="bento.w.budget">Budget</span><span>¥8,000</span></div></div>
         </div>
-        <div class="live"><i></i><span data-t="bento.w.live"></span></div>
+        <div class="live"><i></i><span data-t="bento.w.live">Widget</span></div>
       </div>
-      <div class="tile t-c reveal d1"><div class="cur"><div class="big">26<small data-t="bento.c.k"></small></div>
+      <div class="tile t-c reveal d1"><div class="cur"><div class="big">26<small data-t="bento.c.k">currencies · auto-converted</small></div>
         <div class="list"><b>CNY</b><b>USD</b><b>EUR</b><b>JPY</b><b>GBP</b><b>KRW</b><b>HKD</b><b>SGD</b><b>AUD</b><b>CHF</b><b>CAD</b><b>THB</b></div></div></div>
       <div class="tile t-d reveal d2"><div class="stat"><div class="ring-wrap"><svg width="140" height="140"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBE3A3"/><stop offset="1" stop-color="#B8862B"/></linearGradient></defs><circle class="bg" cx="70" cy="70" r="60"/><circle class="fg" cx="70" cy="70" r="60"/></svg><div class="pct">63%</div></div>
-        <div><div class="k" data-t="bento.d.k"></div><div class="l" data-t="bento.d.l"></div></div></div></div>
-      <div class="tile t-e reveal"><div class="stat"><div class="n">7<em>+</em></div><div class="l" data-t="bento.e.l"></div></div></div>
+        <div><div class="k" data-t="bento.d.k">Budget</div><div class="l" data-t="bento.d.l">63% used this month, ¥2,972 to go.</div></div></div></div>
+      <div class="tile t-e reveal"><div class="stat"><div class="n">7<em>+</em></div><div class="l" data-t="bento.e.l">languages: EN · ZH · JA · KO · DE · ES · RU.</div></div></div>
       <div class="tile t-f reveal d1"><img src="assets/shots/iphone-02-records.webp" alt="Ledger" loading="lazy" style="object-position:70% 50%"><div class="shade"></div>
-        <div class="cap"><div class="k" data-t="bento.f.k"></div><div class="t" data-t="bento.f.t"></div><p data-t="bento.f.p"></p></div></div>
+        <div class="cap"><div class="k" data-t="bento.f.k">Ledger</div><div class="t" data-t="bento.f.t">Every entry, accounted</div><p data-t="bento.f.p">Grouped by day, searchable notes, share-to-book.</p></div></div>
       <div class="tile t-g reveal d2"><img src="assets/shots/iphone-01-dashboard-top.webp" alt="Balance" loading="lazy" style="object-position:50% 62%"><div class="shade"></div>
-        <div class="cap"><div class="k" data-t="bento.g.k"></div><div class="t" data-t="bento.g.t"></div><p data-t="bento.g.p"></p></div></div>
+        <div class="cap"><div class="k" data-t="bento.g.k">Overview</div><div class="t" data-t="bento.g.t">Net balance this month</div><p data-t="bento.g.p">Income and expense at a glance, budget updating live.</p></div></div>
     </div>
   </div>
 </section>
@@ -182,8 +188,8 @@
 <section id="mac" class="mac-sec">
   <div class="wrap">
     <div class="section-head reveal">
-      <div><span class="eyebrow" data-t="mac.eyebrow"></span><h2 class="display" data-t-html="mac.title"></h2></div>
-      <p class="lead" data-t="mac.lead"></p>
+      <div><span class="eyebrow" data-t="mac.eyebrow">Mac Catalyst</span><h2 class="display" data-t-html="mac.title">From pocket <br><em>to desk</em>.</h2></div>
+      <p class="lead" data-t="mac.lead">One ledger across iPhone, iPad and Mac over iCloud — no account needed. Re-laid-out for wide screens.</p>
     </div>
     <div class="laptop reveal" id="laptop">
       <div class="tilt">
@@ -192,9 +198,29 @@
       </div>
     </div>
     <div class="mac-row reveal d1">
-      <figure><img src="assets/shots/mac-02-records.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/shots/mac-04-reports.webp" alt="" loading="lazy"></figure>
-      <figure><img src="assets/shots/mac-05-ai-chat.webp" alt="" loading="lazy"></figure>
+      <figure><img src="assets/shots/mac-02-records.webp" alt="Moneta for Mac — ledger grouped by day" loading="lazy"></figure>
+      <figure><img src="assets/shots/mac-04-reports.webp" alt="Moneta for Mac — spending reports and category share" loading="lazy"></figure>
+      <figure><img src="assets/shots/mac-05-ai-chat.webp" alt="Moneta for Mac — AI assistant answering a budget question" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap faq-wrap">
+    <div class="reveal">
+      <span class="eyebrow" data-t="faq.eyebrow">FAQ</span>
+      <h2 class="display" data-t-html="faq.title">Questions, <em>answered</em></h2>
+      <p class="lead" data-t="faq.lead">Pricing, devices, how recognition works and where your data goes.</p>
+      <p style="margin-top:24px"><a class="btn-ghost" href="/support" style="text-decoration:none" data-t="faq.more">See all support questions →</a></p>
+    </div>
+    <div class="faq-list reveal d1">
+      <details class="faq-item"><summary data-t="faq.q1">How much does Moneta cost?</summary><p data-t="faq.a1">A one-time purchase on the App Store (US$1.99 in the US store; prices vary by region). No subscription, no account, no ads.</p></details>
+      <details class="faq-item"><summary data-t="faq.q2">Which devices are supported?</summary><p data-t="faq.a2">iPhone (iOS 17+), iPad (iPadOS 17+) and Mac (macOS 14+, Mac Catalyst). One purchase covers all three, and the ledger syncs through your own iCloud.</p></details>
+      <details class="faq-item"><summary data-t="faq.q3">How does voice booking work?</summary><p data-t="faq.a3">Say "Lunch 35" and it is booked. On-device speech recognition runs first, with AI audio understanding as a fallback. Microphone and Speech Recognition permissions are required.</p></details>
+      <details class="faq-item"><summary data-t="faq.q4">What does receipt scanning extract?</summary><p data-t="faq.a4">OCR and AI pull the amount, merchant, date and category from a photo — up to 3 receipts at a time — and show a confidence so you can double-check before booking.</p></details>
+      <details class="faq-item"><summary data-t="faq.q5">Which AI does it use, and is my data sent anywhere?</summary><p data-t="faq.a5">Gemini is built in through Firebase AI Logic, and you can connect any OpenAI-compatible endpoint instead (DeepSeek, Groq, OpenRouter, Ollama). The ledger is local-first; only what you send to the AI is processed, and only when you ask.</p></details>
+      <details class="faq-item"><summary data-t="faq.q6">Can I export or migrate my data?</summary><p data-t="faq.a6">Yes — CSV export and import anytime under Settings → Data; the files open in Excel or Numbers. 26 currencies with built-in rates work offline.</p></details>
     </div>
   </div>
 </section>
@@ -203,15 +229,15 @@
 <section id="privacy">
   <div class="wrap privacy">
     <div class="reveal">
-      <span class="eyebrow" data-t="privacy.eyebrow"></span>
-      <h2 class="display" data-t-html="privacy.title"></h2>
-      <p class="lead" data-t="privacy.lead"></p>
+      <span class="eyebrow" data-t="privacy.eyebrow">Privacy</span>
+      <h2 class="display" data-t-html="privacy.title">Your data, <br><em>yours alone</em>.</h2>
+      <p class="lead" data-t="privacy.lead">Local-first. No ads, no trackers, no data broking.</p>
       <ul class="points">
-        <li><span><b data-t="privacy.p1b"></b> — <span data-t="privacy.p1"></span></span></li>
-        <li><span><b data-t="privacy.p2b"></b> — <span data-t="privacy.p2"></span></span></li>
-        <li><span><b data-t="privacy.p3b"></b> — <span data-t="privacy.p3"></span></span></li>
+        <li><span><b data-t="privacy.p1b">Local-first</b> — <span data-t="privacy.p1">Your ledger lives on your device; we run no servers that hold it.</span></span></li>
+        <li><span><b data-t="privacy.p2b">AI on demand</b> — <span data-t="privacy.p2">Processed only when you ask. Export everything as CSV anytime.</span></span></li>
+        <li><span><b data-t="privacy.p3b">iCloud sync</b> — <span data-t="privacy.p3">Through your own private iCloud database, protected by Apple.</span></span></li>
       </ul>
-      <p style="margin-top:28px"><a href="privacy.html" style="color:var(--gold2);border-bottom:1px solid rgba(233,196,106,.4);padding-bottom:2px" data-t="privacy.link"></a></p>
+      <p style="margin-top:28px"><a href="privacy.html" style="color:var(--gold2);border-bottom:1px solid rgba(233,196,106,.4);padding-bottom:2px" data-t="privacy.link">Read the Privacy Policy →</a></p>
     </div>
     <div class="coin-stage reveal d1">
       <div class="coin">
@@ -226,15 +252,15 @@
 <!-- ================= FINAL CTA ================= -->
 <section class="final reveal">
   <div class="wrap">
-    <span class="eyebrow" data-t="final.eyebrow"></span>
-    <h2 class="display" data-t-html="final.title"></h2>
-    <p data-t="final.lead"></p>
+    <span class="eyebrow" data-t="final.eyebrow">Get started</span>
+    <h2 class="display" data-t-html="final.title">Say it. Snap it. <em>Done.</em></h2>
+    <p data-t="final.lead">Moneta is on the App Store — one purchase for iPhone, iPad and Mac.</p>
     <div class="cta">
       <a class="btn-store" href="https://apps.apple.com/app/id6807001953" target="_blank" rel="noopener">
         <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-        <span data-t="final.cta"></span>
+        <span data-t="final.cta">Download on App Store</span>
       </a>
-      <button class="btn-ghost" id="playfilm2"><span class="play"><svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9z"/></svg></span><span data-t="hero.film"></span></button>
+      <button class="btn-ghost" id="playfilm2"><span class="play"><svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9z"/></svg></span><span data-t="hero.film">Watch the film</span></button>
     </div>
   </div>
 </section>
@@ -243,8 +269,8 @@
 <footer>
   <div class="wrap row">
     <a class="brand" href="#top"><svg viewBox="0 0 64 64"><defs><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3A3"/><stop offset="1" stop-color="#B8862B"/></linearGradient></defs><circle cx="26" cy="32" r="22" fill="url(#cg2)"/><path d="M38 10a22 22 0 0 1 0 44 22 22 0 0 0 0-44z" fill="url(#cg2)"/></svg><span>Moneta</span></a>
-    <div>© 2026 Moneta · <span data-t="footer.made"></span></div>
-    <div><a href="privacy.html" data-t="nav.privacy"></a> · <a href="support.html" data-t="nav.support"></a></div>
+    <div>© 2026 Moneta · <span data-t="footer.made">Made with ❤️ & AI</span></div>
+    <div><a href="privacy.html" data-t="nav.privacy">Privacy</a> · <a href="support.html" data-t="nav.support">Support</a></div>
   </div>
 </footer>
 
