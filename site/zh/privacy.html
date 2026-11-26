@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moneta — 隐私政策</title>
-<meta name="description" content="Moneta 如何处理你的数据：本地优先存储、按需 AI 处理、iCloud 同步、权限与你的权利。">
+<meta name="description" content="Moneta 如何处理你的数据：本地优先存储、按需 AI 处理、iCloud / Google Drive 同步、权限与你的权利。">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.monetia.net/zh/privacy"><link rel="alternate" hreflang="en" href="https://www.monetia.net/privacy"><link rel="alternate" hreflang="zh-Hans" href="https://www.monetia.net/zh/privacy">
 <style>
@@ -37,28 +37,31 @@ a{color:var(--gold-l)}
 </div>
 <div class="wrap">
 <h1><em>Moneta</em> 隐私政策</h1>
-<div class="date">Privacy Policy · 生效日期：2026 年 8 月 31 日</div>
+<div class="date">Privacy Policy · 生效日期：2026 年 11 月 27 日</div>
 <h2>1. 总则</h2>
 <p>Moneta（"本应用"）由独立开发者（"我们"）开发。我们的核心原则是<b>本地优先（Local-first）</b>：你的账本数据默认存储在你的设备上，我们不运营任何后端服务器来存放你的账目。</p>
 
 <h2>2. 我们收集什么</h2>
 <ul>
-<li><b>账目数据（本地存储）</b>：交易金额、分类、备注、商户、收据图片，全部保存在设备本地数据库（SwiftData），并可在你开启后经你本人的 iCloud 私密同步到你的其它设备。这些数据不会发送给我们。</li>
+<li><b>账目数据（本地存储）</b>：交易金额、分类、备注、商户、收据图片，全部保存在设备本地数据库（Android 为 Room，iOS 为 SwiftData），并可在你开启后经你本人的云端账户私密同步到你的其它设备——iOS 使用 iCloud，Android 使用你自己的 Google Drive（隐藏的应用数据文件夹）。这些数据不会发送给我们。</li>
 <li><b>AI 处理（按需、即用即传）</b>：仅当你使用语音记账、收据识别或 AI 对话时，相关文本/音频/图片才会发送至你所配置的 AI 服务商（默认 Firebase AI Logic / Google，或你自行填写的任意 OpenAI 兼容服务商）进行处理。我们不在这类请求中附加任何账号标识，也无法将内容关联到你本人。<b>首次使用 AI 功能前，应用内会弹窗披露上述数据流向并请求你的授权；拒绝后 AI 功能不可用，其余功能不受影响，授权可随时在 设置 → AI 服务商 中更改。</b></li>
-<li><b>我们不收集</b>：无注册账号、无广告标识符（IDFA）、无第三方追踪 SDK、无行为分析。</li>
+<li><b>设备端处理</b>：收据文字先在设备上识别（iOS 为 Apple Vision，Android 为 ML Kit），再按需发送 AI；语音在可用时优先本地转写。</li>
+<li><b>我们不收集</b>：无注册账号、无广告标识符（IDFA / GAID）、无第三方追踪 SDK、无行为分析。</li>
 </ul>
 
 <h2>3. 数据存储与安全</h2>
 <ul>
-<li>账本数据经 iOS 数据保护机制存储；iCloud 同步使用 Apple 端到端加密通道。</li>
+<li>账本数据在 iOS 经数据保护机制存储，在 Android 经应用沙箱存储、密钥保存在 Android Keystore；iCloud 同步使用 Apple 端到端加密通道，Google Drive 同步使用 Google 的加密传输且数据位于你本人的 Google 账户内。</li>
 <li>收据图片仅存本地，可随时在编辑记录时删除。</li>
 </ul>
 
 <h2>4. 第三方服务</h2>
 <ul>
 <li><b>Firebase AI Logic / Google Gemini</b>：处理你主动发起的 AI 请求。受 <a href="https://policies.google.com/privacy" rel="noopener">Google 隐私政策</a>约束。</li>
+<li><b>Firebase App Check（Android）</b>：在发起 AI 请求前向 Google 证明应用完整性（正式版使用 Play Integrity，开发版使用调试提供方）；仅发送设备完整性信号，不发送任何账目内容。</li>
+<li><b>Google Drive / Google Play 服务（Android）</b>：仅在你开启同步或使用语音识别时使用，数据在你本人的 Google 账户内，遵循 <a href="https://policies.google.com/privacy" rel="noopener">Google 隐私政策</a>。</li>
 <li><b>自配 OpenAI 兼容服务商</b>（如 DeepSeek、OpenRouter、Ollama 等）：由你自行选择并配置，其数据处理遵循对应服务商政策。</li>
-<li><b>Apple iCloud</b>：仅在你开启同步时使用，数据在你本人的 iCloud 账户内。</li>
+<li><b>Apple iCloud</b>：仅在 iOS 上开启同步时使用，数据在你本人的 iCloud 账户内。</li>
 </ul>
 
 <h2>5. 权限使用</h2>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moneta — Privacy Policy</title>
-<meta name="description" content="How Moneta handles your data: local-first storage, on-demand AI processing, iCloud sync, permissions and your rights.">
+<meta name="description" content="How Moneta handles your data: local-first storage, on-demand AI processing, iCloud / Google Drive sync, permissions and your rights.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.monetia.net/privacy"><link rel="alternate" hreflang="en" href="https://www.monetia.net/privacy"><link rel="alternate" hreflang="zh-Hans" href="https://www.monetia.net/zh/privacy">
 <style>
@@ -37,28 +37,31 @@ a{color:var(--gold-l)}
 </div>
 <div class="wrap">
 <h1><em>Moneta</em> Privacy Policy</h1>
-<div class="date">Effective date: August 31, 2026</div>
+<div class="date">Effective date: November 27, 2026</div>
 <h2>1. General</h2>
 <p>Moneta (the "App") is developed by an independent developer ("we", "us"). Our core principle is <b>local-first</b>: your ledger data is stored on your device by default, and we do not operate any backend server that holds your records.</p>
 
 <h2>2. What we collect</h2>
 <ul>
-<li><b>Ledger data (stored locally)</b>: transaction amounts, categories, notes, merchants and receipt images are all kept in the app's on-device database (SwiftData) and, if you turn on sync, synced privately through your own iCloud to your other devices. This data is never sent to us.</li>
+<li><b>Ledger data (stored locally)</b>: transaction amounts, categories, notes, merchants and receipt images are all kept in the app's on-device database (Room on Android, SwiftData on iOS) and, if you turn on sync, synced privately through your own cloud account — iCloud on iOS, your own Google Drive (hidden app-data folder) on Android — to your other devices. This data is never sent to us.</li>
 <li><b>AI processing (on demand, transmitted only when used)</b>: only when you use voice booking, receipt recognition or the AI assistant is the relevant text, audio or image sent to the AI provider you have configured (by default Firebase AI Logic / Google, or any OpenAI-compatible provider you enter yourself). We attach no account identifier to such requests and cannot link the content to you. <b>Before you first use an AI feature, the App discloses this data flow in an in-app dialog and asks for your consent; if you decline, AI features stay unavailable while everything else keeps working. You can change this at any time under Settings → AI provider.</b></li>
-<li><b>What we do not collect</b>: no account registration, no advertising identifier (IDFA), no third-party tracking SDKs, no behavioural analytics.</li>
+<li><b>On-device processing</b>: receipt text is recognised on the device (Apple Vision on iOS, ML Kit on Android) before anything is sent to the AI; speech is transcribed on the device first where available.</li>
+<li><b>What we do not collect</b>: no account registration, no advertising identifier (IDFA / GAID), no third-party tracking SDKs, no behavioural analytics.</li>
 </ul>
 
 <h2>3. Storage and security</h2>
 <ul>
-<li>Ledger data is stored with iOS Data Protection; iCloud sync uses Apple's end-to-end encrypted transport.</li>
+<li>Ledger data is stored with iOS Data Protection, respectively the Android app sandbox with secrets kept in the Android Keystore; iCloud sync uses Apple's end-to-end encrypted transport, Google Drive sync uses Google's encrypted transport and stays within your own Google account.</li>
 <li>Receipt images are stored on the device only and can be deleted at any time when editing a record.</li>
 </ul>
 
 <h2>4. Third-party services</h2>
 <ul>
 <li><b>Firebase AI Logic / Google Gemini</b>: processes the AI requests you initiate. Subject to the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</li>
+<li><b>Firebase App Check (Android)</b>: attests the app to Google (Play Integrity on release builds, a debug provider on development builds) before AI requests; it sends device integrity signals to Google but no ledger content.</li>
+<li><b>Google Drive / Google Play services (Android)</b>: used only if you enable sync or use speech recognition; the data stays within your own Google account and follows the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</li>
 <li><b>OpenAI-compatible providers you configure yourself</b> (for example DeepSeek, OpenRouter or Ollama): chosen and configured by you; their data handling follows the respective provider's policies.</li>
-<li><b>Apple iCloud</b>: used only if you enable sync; the data stays within your own iCloud account.</li>
+<li><b>Apple iCloud</b>: used only if you enable sync on iOS; the data stays within your own iCloud account.</li>
 </ul>
 
 <h2>5. Permissions</h2>
